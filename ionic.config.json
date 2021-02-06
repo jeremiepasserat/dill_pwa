@@ -1,0 +1,7 @@
+{
+  "name": "DillApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
