@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="light" (click)="dismissInscription()">Close</ion-button>
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form #form="ngForm" (ngSubmit)="inscription(form)" method="post">
+    <ion-item>
+      <ion-label position="floating">Pseudo :</ion-label>
+      <ion-input ngModel name="pseudo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nom :</ion-label>
+      <ion-input ngModel name="nom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nom :</ion-label>
+      <ion-input ngModel name="prenom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mot de passe :</ion-label>
+      <ion-input type="password" ngModel name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email :</ion-label>
+      <ion-input type="email" ngModel name="email"></ion-input>
+    </ion-item>
+
+
+    <ion-button type="submit" expand="full" color="danger">S'inscrire</ion-button>
+  </form>
+
+  <p text-center>Vous avez déjà un compte ?</p>
+  <ion-button expand="full" color="primary" (click)="connexionModal()">Login</ion-button>
+</ion-content>
