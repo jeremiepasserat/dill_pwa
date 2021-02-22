@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController, ModalController, NavController} from '@ionic/angular';
+import {MenuController, ModalController} from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Utilisateur } from 'src/app/models/utilisateur';
 import {ProfilPage} from '../profil/profil.page';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.page.html',
-  styleUrls: ['./menu.page.scss'],
+  templateUrl: './jeux.page.html',
+  styleUrls: ['./jeux.page.scss'],
 })
 
-export class MenuPage implements OnInit {
+export class JeuxPage implements OnInit {
 
   utilisateur: Utilisateur;
 
@@ -19,10 +19,11 @@ export class MenuPage implements OnInit {
     private authService: AuthService,
     private modalController: ModalController
   ) {
-    this.menu.enable(true);
+    this.menu.enable(false);
   }
 
   ngOnInit() {
+
   }
 
   async profil() {
@@ -30,13 +31,5 @@ export class MenuPage implements OnInit {
       component: ProfilPage,
     });
     return await profilModal.present();
-  }
-
-  ionViewWillEnter() {
-    this.authService.getutilisateur().subscribe(
-      utilisateur => {
-        this.utilisateur = utilisateur;
-      }
-    );
   }
 }

@@ -13,12 +13,17 @@
   </div>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <ion-button color="primary" expand="full" color="primary" (click)="profil()">Profil</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-footer>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-label>Home</ion-label>
+      <ion-icon name="home" color="primary"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/jeux">
+      <ion-label>Jeux</ion-label>
+      <ion-icon name="game-controller" color="primary"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
