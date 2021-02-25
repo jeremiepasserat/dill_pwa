@@ -1,31 +1,88 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="profil()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/menu">
+        <ion-icon slot="icon-only" color="danger" name="log-out-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>Jeux</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="utilisateur != undefined">
-    Welcome {{ utilisateur["pseudo"]  }} {{ utilisateur["prenom"]  }}
+  <div class="button_jeux">
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="prism-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>Tangram</ion-label>
+      </div>
+    </ion-button>
+
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="walk-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>Parcours</ion-label>
+      </div>
+    </ion-button>
+
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="bicycle-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>Sécurité</ion-label>
+        <ion-label>Routière</ion-label>
+      </div>
+    </ion-button>
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="qr-code-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>QR-Code</ion-label>
+      </div>
+    </ion-button>
+
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="newspaper-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>Journal</ion-label>
+      </div>
+    </ion-button>
+
+    <ion-button class="xxx">
+      <div>
+        <ion-icon name="medal-outline" color="secondary"></ion-icon>
+        <br>
+        <ion-label>Défi</ion-label>
+        <ion-label>du mois</ion-label>
+      </div>
+    </ion-button>
+
   </div>
 </ion-content>
 
 
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/menu">
+    <ion-label>Menu</ion-label>
+    <ion-icon name="home-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/jeux">
+    <ion-label>Jeux</ion-label>
+    <ion-icon name="game-controller" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/stat">
+    <ion-label>Stats</ion-label>
+    <ion-icon name="stats-chart-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/carte">
+    <ion-label>Carte</ion-label>
+    <ion-icon name="map-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="full" color="primary" (click)="profil()">Profil</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="full" color="secondary" (click)="profil()">Profil</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-footer>

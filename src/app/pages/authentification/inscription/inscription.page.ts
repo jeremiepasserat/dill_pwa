@@ -16,7 +16,8 @@ export class InscriptionPage implements OnInit {
               private authService: AuthService,
               private navCtrl: NavController,
               private alertService: AlertService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }

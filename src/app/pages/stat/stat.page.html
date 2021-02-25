@@ -8,21 +8,19 @@
         <ion-icon slot="icon-only" color="danger" name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Menu</ion-title>
+    <ion-title>Stat</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="utilisateur != undefined">
-    Welcome {{ utilisateur["pseudo"]  }} {{ utilisateur["prenom"]  }}
-  </div>
+
 </ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button routerLink="/menu">
-      <ion-label>Home</ion-label>
-      <ion-icon name="home" color="primary"></ion-icon>
+      <ion-label>Menu</ion-label>
+      <ion-icon name="home-outline" color="primary"></ion-icon>
     </ion-tab-button>
     <ion-tab-button routerLink="/jeux">
       <ion-label>Jeux</ion-label>
@@ -30,7 +28,7 @@
     </ion-tab-button>
     <ion-tab-button routerLink="/stat">
       <ion-label>Stats</ion-label>
-      <ion-icon name="stats-chart-outline" color="primary"></ion-icon>
+      <ion-icon name="stats-chart" color="primary"></ion-icon>
     </ion-tab-button>
     <ion-tab-button routerLink="/carte">
       <ion-label>Carte</ion-label>
@@ -38,3 +36,4 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
+

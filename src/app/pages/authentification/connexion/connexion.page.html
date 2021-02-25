@@ -1,6 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button color="danger" (click)="dismissConnexion()">X</ion-button>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismissConnexion()">
+        <ion-icon slot="icon-only" color="danger" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Connexion</ion-title>
   </ion-toolbar>
 </ion-header>
