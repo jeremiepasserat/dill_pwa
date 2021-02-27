@@ -25,7 +25,7 @@ export class CommuPage implements OnInit {
     private plt: Platform,
     private router: Router
   ) {
-    this.menu.enable(false);
+    this.menu.enable(true);
   }
 
   ngOnInit() {
@@ -35,6 +35,7 @@ export class CommuPage implements OnInit {
   ngAfterViewInit() {
     this.plt.ready().then(() => {
       this.initMap();
+      this.afficherMarker();
     });
   }
 
@@ -55,6 +56,21 @@ export class CommuPage implements OnInit {
     setTimeout(()=>{
       this.map.invalidateSize();
     });
+
+  }
+
+
+  afficherMarker(){
+    const customMarkerIcon = icon({
+      iconUrl: './assets/icon/favicon.png',
+      iconSize: [64, 64], 
+      popupAnchor: [0, -20]
+    });
+
+
+    marker([33.6396965,-84.4304574], {icon: customMarkerIcon})
+      .bindPopup('<b>restaurant.title</b>', { autoClose: false })
+      .addTo(this.map).openPopup();
 
   }
 }
