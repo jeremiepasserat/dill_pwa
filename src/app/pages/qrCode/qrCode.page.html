@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="profil()">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!showCamera">
+        <ion-icon slot="icon-only" color="danger" name="log-out-outline"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="showCamera" (click)="closeCamera()">
+        <ion-icon slot="icon-only" color="danger" name = "close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Scanner QR-Code</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div *ngIf="!showCamera">
+  <ion-button expand="block" (click)="scanCode()" >
+    <ion-label>Scanner un QR Code</ion-label>
+    <ion-icon slot="start" name="scan"></ion-icon>
+  </ion-button>
+
+  <ion-item *ngIf="textScanned" lines="none">
+    <ion-label>
+      <p>Texte du QR Code</p>
+      <h2><b>{{ textScanned }}</b></h2>
+    </ion-label>
+  </ion-item>
+</div>
+
+<div *ngIf="!showCamera">
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/menu">
+    <ion-label>Home</ion-label>
+    <ion-icon name="home-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/jeux">
+    <ion-label>Jeux</ion-label>
+    <ion-icon name="game-controller-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/stat">
+    <ion-label>Stats</ion-label>
+    <ion-icon name="stats-chart-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/carte">
+    <ion-label>Carte</ion-label>
+    <ion-icon name="map-outline" color="primary"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
+</div>
+
+<div *ngIf="showCamera">
+  <ion-tab-bar slot="bottom">
+  </ion-tab-bar>
+</div>
